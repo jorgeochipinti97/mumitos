@@ -2,26 +2,309 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+background-color: #f5f5f7;
+
+}
+
+
+
+:root {
+  --facebook: #3b5998;
+    --instagram: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    --youtube: #FF0000;
+    --x: #333;
+    --linkedin: #0072b1;
+    --whatsapp: #25d366;
+    --tiktok: #4f4f4f;
+}
+
+
+.icons {
+  transform: scale(0.6);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  ;
+}
+
+.icons .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  transition: background-color 300ms, border-width 300ms;
+  background-color: rgba(0,0,0,0.2)
+}
+
+.icons .icon svg {
+  transition: transform 300ms;
+}
+
+.icons .facebook {
+  --color: var(--facebook);
+}
+
+.icons .instagram {
+  --color: var(--instagram);
+}
+
+.icons .youtube {
+  --color: var(--youtube);
+}
+
+.icons .x {
+  --color: var(--x);
+}
+
+.icons .linkedin {
+  --color: var(--linkedin);
+}
+.icons .whatsapp {
+  --color: var(--whatsapp);
+}
+.icons .tiktok {
+  --color: var(--tiktok);
+}
+
+.icons .icon:hover {
+  background: var(--color);
+  border-width: 1px;
+}
+
+.icons .icon:hover svg {
+  transform: scale(1.1);
+}
+
+
+
+.button2 {
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #090909;
+
+  cursor: pointer;
+
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
+}
+
+.button2:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+.button2:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button2:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #009087;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button2:hover {
+  color: #ffffff;
+  border: 1px solid #009087;
+}
+
+.button2:hover:before {
+  top: -35%;
+  background-color: #009087;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.button2:hover:after {
+  top: -45%;
+  background-color: #009087;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+
+/* Input container */
+.input-container {
+  position: relative;
+  margin: 20px;
+}
+
+/* Input field */
+.input-field {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
+}
+
+/* Input label */
+.input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: rgba(204, 204, 204, 0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Input highlight */
+.input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #007bff;
+  transition: all 0.3s ease;
+}
+
+/* Input field:focus styles */
+.input-field:focus + .input-label {
+  top: -20px;
+  font-size: 12px;
+  color: #007bff;
+}
+
+.input-field:focus + .input-label + .input-highlight {
+  width: 100%;
+}
+
+
+
+.btn {
+  position: relative;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  display: inline-block;
+  border-radius: 6em;
+  transition: all .2s;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  color: black;
+  background-color: white;
+ }
+ 
+ .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+ }
+ 
+ .btn::after {
+  background-color: #fff;
+ }
+ 
+ .btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+ }
+
+ input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Ocultar flechas en Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+
+.hidden-checkbox {
+  display: none;
+}
+
+.label-size {
+  display: inline-block;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  /* otros estilos que desees agregar */
+}
+
+/* Estilo cuando el checkbox está marcado */
+.label-size:active,
+.label-size:hover {
+  background-color: #e0e0e0;
+}
+
+/* Para cambiar el estilo cuando el checkbox está seleccionado */
+.hidden-checkbox:checked + .label-size {
+  background-color: blue; /* o cualquier otro estilo que prefieras */
+  color: white;
+}
+
+
+.swiper {
+  width: 300px;
+  height: 300px;
+  padding: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
 }
