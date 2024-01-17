@@ -68,7 +68,7 @@ export const Navbar = () => {
       >
         <a href="/">
           <img
-            src="/logo.png"
+            src="/logocheeky.png"
             alt=""
             className="w-[200px] absolute top-1 left-2"
           />
