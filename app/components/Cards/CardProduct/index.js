@@ -23,9 +23,9 @@ const {push} = useRouter()
 
 
   return (
-    <div className=" rounded-xl h-fit mx-5 w-full cursor-pointer">
+    <div className=" rounded-xl  mx-5 w-full cursor-pointer">
       <div className="">
-        <img src={img} className="rounded-3xl" />
+        <img src={img} className="rounded-3xl " />
       </div>
       <p className="font-semibold text-xl mt-2 ml-2 font-mono">{name}</p>
       <p className="font-light text-md ml-2 font-geist">

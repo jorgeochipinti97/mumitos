@@ -28,6 +28,7 @@ export const ProductsFilterComponent = ({ productos, pageQuery }) => {
     "Vestidos y polleras",
   ];
 
+  const { push } = useRouter();
   useEffect(() => {
     productos && setProducts(productos);
     productos && filterCategories(productos);
@@ -56,7 +57,7 @@ export const ProductsFilterComponent = ({ productos, pageQuery }) => {
   return (
     <div>
       <div>
-        <div className="">
+        <div className="pb-28 md:py-0">
           <div
             className="flex w-screen justify-center"
             style={{ display: pageQuery == "accesorio" ? "none" : "auto" }}
@@ -105,15 +106,45 @@ export const ProductsFilterComponent = ({ productos, pageQuery }) => {
             <div className="w-11/12 md:w-9/12 grid grid-cols-1 md:grid-cols-3">
               {products.map((e) => (
                 <div key={e.nombreproducto}>
-
-                <CardProduct
-                  name={e.nombreproducto}
-                  price={e.precio}
-                  img={e.imagesarray[0]}
-                  id={e._id}
-                />
-            </div>
+                  <CardProduct
+                    name={e.nombreproducto}
+                    price={e.precio}
+                    img={e.imagesarray[0]}
+                    id={e._id}
+                  />
+                </div>
               ))}
+              {productos.length == 0 && (
+                <div className="flex flex-col items-center justify-center w-screen">
+                  <p className="text-xl text-center">
+                    No hay productos para mostrar
+                  </p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    className="w-6/12"
+                    viewBox="0 0 48 48"
+                  >
+                    <g fill="#333">
+                      <path d="M18.883 4.697a1 1 0 011.414 0l3.591 3.59 3.581-3.58a1 1 0 111.414 1.414l-3.58 3.581 3.48 3.48a1 1 0 01-1.415 1.415l-3.48-3.48-3.49 3.49a1 1 0 01-1.414-1.415l3.49-3.49-3.59-3.59a1 1 0 010-1.415z"></path>
+                      <path
+                        fillRule="evenodd"
+                        d="M23.86 15.051a1 1 0 01.632 0l14.778 4.926c.2.057.38.175.513.346l4.003 5.138a1 1 0 01-.204 1.426l-15.4 5.129-3.217-4.13a1 1 0 00-1.579.001l-3.2 4.122-15.444-5.151a1 1 0 01-.165-1.397l3.931-5.046a1 1 0 01.537-.426L23.86 15.05zm11.969 5.887L24.18 24.82l-11.652-3.884 11.648-3.882 11.653 3.884z"
+                        clipRule="evenodd"
+                      ></path>
+                      <path d="M28.144 34.137l11.847-3.946v6.572a3 3 0 01-2.052 2.846l-12.763 4.254V31.411l1.863 2.392c.26.334.703.468 1.105.334zM23.176 31.42v12.443l-12.763-4.254a3 3 0 01-2.051-2.846v-6.59l11.863 3.958a1 1 0 001.106-.336l1.845-2.376z"></path>
+                    </g>
+                  </svg>
+                  <div>
+                    <button
+                      onClick={() => push("/")}
+                      className="bg-black text-white px-2 py-2 rounded-xl mt-20"
+                    >
+                      Seguir comprando
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
