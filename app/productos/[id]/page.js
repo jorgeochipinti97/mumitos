@@ -12,7 +12,7 @@ const Page = ({ params }) => {
   const products_ = useProductos();
   const [producto, setProducto] = useState();
   const [products, setProducts] = useState();
-  const [quantity_, setQuantity_] = useState(0);
+  const [quantity_, setQuantity_] = useState(1);
   const { addProductToCart } = useContext(CartContext);
   const { push } = useRouter();
   const [size, setSize] = useState("");
