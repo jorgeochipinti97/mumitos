@@ -57,7 +57,7 @@ export const ProductsFilterComponent = ({ productos, pageQuery }) => {
   return (
     <div>
       <div>
-        <div className="pb-28 md:py-0">
+        <div className="pb-28 md:pb-28">
           <div
             className="flex w-screen justify-center"
             style={{ display: pageQuery == "accesorio" ? "none" : "auto" }}
