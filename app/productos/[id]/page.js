@@ -112,9 +112,12 @@ const Page = ({ params }) => {
               <p className="mt-10 text-center text-4xl font-light">
                 {formatPriceToUSD(producto.precio)}
               </p>
-              <p className="mt-10 text-justify   capitalize ml-5 text-xs font-light">
+              <div className="w-full flex justify-center">
+
+              <p className="mt-10 text-justify   capitalize w-9/12 text-xs  font-light">
                 {producto.descripcion}
               </p>
+              </div>
               <div>
                 {producto.selectedsizes.map((e) => (
                   <button
