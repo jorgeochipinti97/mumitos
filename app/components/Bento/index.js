@@ -28,7 +28,7 @@ const SkeletonFour = () => {
   return (
 <>
 <div className='w-full flex justify-center h-full '>
-<img src='/accesorios.jpeg' className='w-auto' alt=''/>,
+<img src='/accesorios.jpeg' className='w-auto' alt=''/>
 </div>
 </>
   );

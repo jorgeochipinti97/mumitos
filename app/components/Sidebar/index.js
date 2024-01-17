@@ -12,14 +12,14 @@ const Sidebar = () => {
         style={{ display: pathname.includes("admin") ? "auto" : "none" }}
       >
         <ul className="flex">
-          <li class="">
+          {/* <li class="">
             <a
               href="/admin"
               class="flex items-center justify-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800"
             >
               <span>Inicio</span>
             </a>
-          </li>
+          </li> */}
           <li class="">
             <a
               href="/admin/productos"
@@ -53,14 +53,14 @@ const Sidebar = () => {
           <h1 className="text-xl font-semibold">Momitos</h1>
         </div>
         <ul className="flex flex-col py-4">
-          <li>
+          {/* <li>
             <a
               href="/admin"
               className="flex items-center px-6 py-3 hover:bg-gray-700"
             >
               <span>Inicio</span>
             </a>
-          </li>
+          </li> */}
           <li>
             <a
               href="/admin/productos"

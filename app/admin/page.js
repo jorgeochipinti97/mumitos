@@ -13,7 +13,7 @@ const {push}= useRouter()
   },[state])
   return (
     <div className="h-screen bg-black flex items-center justify-center">
-      <input type="text" className="bg-white px-2 rounded-full " onChange={(e)=>setState(e.target.value)}/>
+      <input type="password" className="bg-white px-2 rounded-full " onChange={(e)=>setState(e.target.value)}/>
     </div>
   );
 };

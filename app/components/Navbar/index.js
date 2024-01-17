@@ -20,7 +20,7 @@ export const Navbar = () => {
           <li class="">
             <a
               href="/nino"
-              class="flex items-center justify-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800"
+              class="flex items-center justify-center w-full px-4 py-3 "
             >
               <span>Niño</span>
             </a>
@@ -28,7 +28,7 @@ export const Navbar = () => {
           <li class="">
             <a
               href="/nina"
-              class="flex items-center justify-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800"
+              class="flex items-center justify-center w-full px-4 py-3 "
             >
               <span>Niña</span>
             </a>
@@ -36,7 +36,7 @@ export const Navbar = () => {
           <li class="">
             <a
               href="/bebes"
-              class="flex items-center justify-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800"
+              class="flex items-center justify-center w-full px-4 py-3 "
             >
               <span>Bebés</span>
             </a>
@@ -44,17 +44,17 @@ export const Navbar = () => {
           <li class="">
             <a
               href="/accesorios"
-              class="flex items-center justify-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800"
+              class="flex items-center justify-center w-full px-4 py-3 "
             >
-              <span>accesorios</span>
+              <span>Accesorios</span>
             </a>
           </li>
           <li class="">
             <a
               href="/noestacional"
-              class="flex items-center justify-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800"
+              class="flex items-center justify-center w-full px-4 py-3 "
             >
-              <span>No estacional</span>
+              <span className="te">No estacional</span>
             </a>
           </li>
         </ul>
