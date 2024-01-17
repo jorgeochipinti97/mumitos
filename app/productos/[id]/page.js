@@ -106,13 +106,13 @@ const Page = ({ params }) => {
               <SliderFlip images={producto.imagesarray} />
             </div>
             <div className=" ">
-              <p className="text-center text-2xl md:text-7xl font-bold capitalize">
+              <p className="text-center text-2xl md:text-7xl font-bold capitalize mx-2 mt-10 md:mt-5">
                 {producto.nombreproducto}
               </p>
               <p className="mt-10 text-center text-4xl font-light">
                 {formatPriceToUSD(producto.precio)}
               </p>
-              <p className="md:mt-10 mt-20 text-start capitalize ml-5 text-xs font-light">
+              <p className="mt-10 text-justify  text-start capitalize ml-5 text-xs font-light">
                 {producto.descripcion}
               </p>
               <div>
