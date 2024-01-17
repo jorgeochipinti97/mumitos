@@ -16,9 +16,8 @@ export const SliderFlip = ({ images }) => {
         effect={"flip"}
         grabCursor={true}
         pagination={true}
-
         modules={[EffectFlip, Pagination]}
-        className="mySwiper"
+        className="mySwiper md:w-[50%] w-[80%]"
       >
         {images.map((e) => (
           <SwiperSlide key={e} className="">
