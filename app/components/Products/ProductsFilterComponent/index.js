@@ -102,10 +102,10 @@ export const ProductsFilterComponent = ({ productos, pageQuery }) => {
               ))}
             </div>
           </div>
-          <div className="w-screen">
+          <div className="w-screen flex justify-center">
             <div className="w-11/12 md:w-9/12 grid grid-cols-1 md:grid-cols-3">
               {products.map((e) => (
-                <div key={e.nombreproducto}>
+                <div key={e.nombreproducto} className="w-10/12">
                   <CardProduct
                     name={e.nombreproducto}
                     price={e.precio}
@@ -114,15 +114,17 @@ export const ProductsFilterComponent = ({ productos, pageQuery }) => {
                   />
                 </div>
               ))}
+            </div>
+          </div>
               {productos.length == 0 && (
-                <div className="flex flex-col items-center justify-center w-screen">
+                <div className="flex flex-col items-center justify-center w-full ">
                   <p className="text-xl text-center">
                     No hay productos para mostrar
                   </p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
-                    className="w-6/12"
+                    className=" md:w-[300px] w-6/12"
                     viewBox="0 0 48 48"
                   >
                     <g fill="#333">
@@ -145,8 +147,6 @@ export const ProductsFilterComponent = ({ productos, pageQuery }) => {
                   </div>
                 </div>
               )}
-            </div>
-          </div>
         </div>
       </div>
     </div>
