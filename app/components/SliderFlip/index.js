@@ -16,13 +16,15 @@ export const SliderFlip = ({ images }) => {
         effect={"flip"}
         grabCursor={true}
         pagination={true}
-        navigation={true}
-        modules={[EffectFlip, Pagination, Navigation]}
+
+        modules={[EffectFlip, Pagination]}
         className="mySwiper"
       >
         {images.map((e) => (
-          <SwiperSlide key={e}>
-            <img src={e} />
+          <SwiperSlide key={e} className="h-1/6">
+            <div className="md:h-fit ">
+            <img src={e} className="max-h-[300px]"/>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

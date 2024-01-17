@@ -200,19 +200,31 @@ const Page = ({ params }) => {
             </div>
           </div>
 
-          <Marquee autoFill>
-            {products.map((e) => (
-              <div key={e.nombreproducto} className="flex flex-col items-center justify-center">
-                <a href={e.slug}>
-
-                <div className="w-6/12">
-                  <img src={e.imagesarray[0]} alt="" />
-                  <p className="text-center uppercase">{e.nombreproducto}</p>
-                </div>
-                </a>
-              </div>
-            ))}
-          </Marquee>
+          {products && (
+            <>
+              <Marquee autoFill>
+                {products.map((e) => (
+                  <div
+                    key={e.nombreproducto}
+                    className="flex flex-col items-center justify-center"
+                  >
+                    <a href={e.slug}>
+                      <div className="w-6/12 mx-5 my-20">
+                        <img
+                          src={e.imagesarray[0]}
+                          alt=""
+                          className="max-w-[200px]"
+                        />
+                        <p className="text-center uppercase">
+                          {e.nombreproducto}
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                ))}
+              </Marquee>
+            </>
+          )}
         </>
       )}
     </div>
