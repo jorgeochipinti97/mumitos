@@ -30,7 +30,7 @@ export const MenuComponent = () => {
           cursor: "pointer",
         }}
       >
-        <Link href={text == 'Inicio' && '/' || text =='Bebes' &&  "/bebes" || text == 'Niño' && '/nino' || text == 'Niña' && "/nina" || text == "Accesorios" && "/accesorios" || text == "Fuera de temporada" && "/noestacional"}>
+        <Link href={text == 'Inicio' && '/' || text =='Bebes' &&  "/bebes" || text == 'Niño' && '/nino' || text == 'Niña' && "/nina" || text == "Accesorios" && "/accesorios" || text == "Liquidación" && "/noestacional"}>
           {text}
 
           {selectedIndex === i && (
