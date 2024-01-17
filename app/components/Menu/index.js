@@ -10,7 +10,7 @@ const underlineTabs = [
   "Niño",
   "Niña",
   "Accesorios",
-  "Fuera de temporada",
+  "Liquidación",
 ];
 
 export const MenuComponent = () => {

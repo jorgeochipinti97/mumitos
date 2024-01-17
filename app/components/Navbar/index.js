@@ -54,7 +54,7 @@ export const Navbar = () => {
               href="/noestacional"
               class="flex items-center justify-center w-full px-4 py-3 "
             >
-              <span className="te">No estacional</span>
+              <span className="te">Liquidación</span>
             </a>
           </li>
         </ul>
