@@ -7,7 +7,7 @@ const Page = () => {
   const filteredProducts = useSearchProducts("genero", "niña");
 
   return (
-    <div className="pt-20">
+    <div className="py-20 min-h-screen">
       <ProductsFilterComponent
         productos={filteredProducts}
         pageQuery={"niña"}
