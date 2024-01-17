@@ -19,7 +19,7 @@ export const BentoGridItem = ({ className, title, href, header }) => {
     <Link href={href}>
       <div
         className={cn(
-          "h-auto cursor-pointer row-span-1 rounded-xl  group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4  bg-white border border-transparent justify-between flex flex-col space-y-4",
+          "h-full cursor-pointer row-span-1 rounded-xl  group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4  bg-white border border-transparent justify-between flex flex-col space-y-4",
           className
         )}
       >
