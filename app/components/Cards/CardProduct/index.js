@@ -1,13 +1,12 @@
 "use client";
 import { CartContext } from "@/context/cart/CartContext";
 import { formatPriceToUSD } from "@/utils/format";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useContext, useState } from "react";
 
-export const CardProduct = ({ name,id, price, img }) => {
-const {push} = useRouter()
-
-
+export const CardProduct = ({ name, id, price, img }) => {
+  const { push } = useRouter();
 
   const createWhatsAppLink = (name, price) => {
     const message = `Hola, estoy interesado en comprar el producto: ${name} a ${formatPriceToUSD(
@@ -20,13 +19,13 @@ const {push} = useRouter()
     return whatsappUrl;
   };
 
-
-
   return (
     <div className=" rounded-xl  mx-5 w-full cursor-pointer">
-      <div className="">
-        <img src={img} className="rounded-3xl " />
-      </div>
+      <Link href={`/productos/${id}`}>
+        <div>
+          <img src={img} className="rounded-3xl " />
+        </div>
+      </Link>
       <p className="font-semibold text-xl mt-2 ml-2 font-mono">{name}</p>
       <p className="font-light text-md ml-2 font-geist">
         {formatPriceToUSD(price)}
@@ -34,8 +33,7 @@ const {push} = useRouter()
       <div className="flex justify-around">
         <button
           className="button2 font-semibold mt-2 font-geist text-xs px-1 py-2"
-
-          onClick={()=> push(`/productos/${id}`)}
+          onClick={() => push(`/productos/${id}`)}
         >
           Ver más
         </button>
