@@ -112,7 +112,7 @@ const Page = ({ params }) => {
               <p className="mt-10 text-center text-4xl font-light">
                 {formatPriceToUSD(producto.precio)}
               </p>
-              <p className="mt-10 text-justify  text-start capitalize ml-5 text-xs font-light">
+              <p className="mt-10 text-justify   capitalize ml-5 text-xs font-light">
                 {producto.descripcion}
               </p>
               <div>
