@@ -66,11 +66,11 @@ export const Navbar = () => {
           display: pathname.includes("admin") ? "none" : "auto",
         }}
       >
-        <a href="/">
+        <a href="/" >
           <img
             src="/logocheeky.png"
             alt=""
-            className="w-[200px] absolute top-1 left-2"
+            className="w-[160px] absolute top-0  left-2"
           />
         </a>
         <div className="flex-1" />
