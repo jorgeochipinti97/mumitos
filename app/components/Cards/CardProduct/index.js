@@ -5,8 +5,9 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useContext, useState } from "react";
 
-export const CardProduct = ({ name, id, price, img }) => {
+export const CardProduct = ({ name, id, price, img, descuento }) => {
   const { push } = useRouter();
+  const precioConDescuento = descuento ? price - (price * descuento / 100) : price;
 
   const createWhatsAppLink = (name, price) => {
     const message = `Hola, estoy interesado en comprar el producto: ${name} a ${formatPriceToUSD(
@@ -27,9 +28,16 @@ export const CardProduct = ({ name, id, price, img }) => {
         </div>
       </Link>
       <p className="font-semibold text-xl mt-2 ml-2 font-mono">{name}</p>
-      <p className="font-light text-md ml-2 font-geist">
-        {formatPriceToUSD(price)}
-      </p>
+      <div className="font-light text-md ml-2 font-geist">
+        {descuento ? (
+          <>
+            <span className="line-through">{formatPriceToUSD(price)}</span>
+            <span className="ml-2">{formatPriceToUSD(precioConDescuento)}</span>
+          </>
+        ) : (
+          <span>{formatPriceToUSD(price)}</span>
+        )}
+      </div>
       <div className="flex justify-around">
         <button
           className="button2 font-semibold mt-2 font-geist text-xs px-1 py-2"

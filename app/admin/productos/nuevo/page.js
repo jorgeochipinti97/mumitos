@@ -14,6 +14,7 @@ const Page = () => {
   const [precio, setPrecio] = useState("");
   const [nombreproducto, setnombreproducto] = useState("");
   const [imagesarray, setimagesarray] = useState([]);
+  const [descuento, setDescuento] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const { push } = useRouter();
   const categorias = [
@@ -121,6 +122,9 @@ const Page = () => {
     }
   };
 
+  const handleDescuentoChange = (e) => {
+    setDescuento(e.target.value);
+  };
   const handleGeneroChange = (e) => {
     setGenero(e.target.value);
   };
@@ -161,6 +165,7 @@ const Page = () => {
         precio: parseFloat(precio),
         selectedsizes: selectedsizes.map((size) => size.toLowerCase()),
         imagesarray: imagesarray,
+        descuento: descuento ? parseFloat(descuento) : null,
         slug: slug,
       };
 
@@ -281,7 +286,16 @@ const Page = () => {
             onChange={handlePrecioChange}
             placeholder="Precio"
           />
-
+          <input
+            className="my-2 py-2 rounded-xl px-2"
+            type="number"
+            id="descuento"
+            value={descuento}
+            onChange={handleDescuentoChange}
+            placeholder="Porcentaje de descuento"
+            min="0"
+            max="100"
+          />
           <div className="flex justify-center my-5">
             <button className="btn" type="submit">
               Enviar

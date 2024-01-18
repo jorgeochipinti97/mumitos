@@ -111,6 +111,7 @@ export const ProductsFilterComponent = ({ productos, pageQuery }) => {
                     price={e.precio}
                     img={e.imagesarray[0]}
                     id={e._id}
+                    descuento={e.descuento}
                   />
                 </div>
               ))}
