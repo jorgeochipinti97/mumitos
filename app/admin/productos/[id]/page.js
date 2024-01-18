@@ -25,6 +25,7 @@ const Page = ({ params }) => {
   const [nombreproducto, setnombreproducto] = useState("");
   const [imagesarray, setimagesarray] = useState([]);
   const [descripcion, setDescripcion] = useState("");
+  const [descuento, setDescuento] = useState("");
 
   useEffect(() => {
     producto && setimagesarray(producto.imagesarray);
@@ -32,6 +33,7 @@ const Page = ({ params }) => {
     producto && setGenero(producto.genero);
     producto && setDescripcion(producto.descripcion);
     producto && setCategoria(producto.categoria);
+    producto && setDescuento(producto.descuento);
 
     producto && setselectedsizes(producto.selectedsizes);
     producto && setPrecio(producto.precio);
@@ -134,7 +136,9 @@ const Page = ({ params }) => {
   const handleCategoriaChange = (e) => {
     setCategoria(e.target.value);
   };
-
+  const handleDescuentoChange = (e) => {
+    setDescuento(e.target.value);
+  };
   const handlePrecioChange = (e) => {
     setPrecio(e.target.value);
   };
@@ -168,6 +172,7 @@ const Page = ({ params }) => {
         precio: parseFloat(precio),
         selectedsizes: selectedsizes.map((size) => size.toLowerCase()),
         imagesarray: imagesarray,
+        descuento: descuento ? parseFloat(descuento) : null,
       };
 
       const response = await axios.put(`/api/productos/${params.id}`, productoData);
@@ -280,7 +285,16 @@ response.data.success && alert('producto modificado')
               onChange={handlePrecioChange}
               placeholder="Precio"
             />
-
+        <input
+            className="my-2 py-2 rounded-xl px-2"
+            type="number"
+            id="descuento"
+            value={descuento}
+            onChange={handleDescuentoChange}
+            placeholder="Porcentaje de descuento"
+            min="0"
+            max="100"
+          />
             <div className="flex justify-center my-5">
               <button className="btn" type="submit">
                 Enviar
