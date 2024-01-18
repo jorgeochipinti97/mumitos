@@ -22,7 +22,7 @@ export default function Home() {
         <div className=" items-center flex">
           <div className="icons h-fit">
             <a
-              href="#"
+              href="https://www.instagram.com/cheeky.montegrande/"
               class="icon  instagram border-2 border-white p-4 rounded-full"
             >
               <svg
@@ -39,7 +39,7 @@ export default function Home() {
             </a>
 
             <a
-              href="#"
+              href="https://wa.link/3y5mq3"
               class="icon  border-2 border-white p-4 rounded-full whatsapp"
             >
               <svg
@@ -68,7 +68,7 @@ export default function Home() {
             </a>
 
             <a
-              href="#"
+              href="https://www.tiktok.com/@cheeky.montegrande"
               class="icon  border-2 border-white p-4 rounded-full tiktok "
             >
               <svg
@@ -125,7 +125,7 @@ export default function Home() {
           <ContactForm />
       <div class="icons h-fit">
         <a
-          href="#"
+          href="https://www.instagram.com/cheeky.montegrande/"
           class="icon  instagram border-2 border-white p-4 rounded-full"
         >
           <svg
@@ -142,7 +142,7 @@ export default function Home() {
         </a>
 
         <a
-          href="#"
+          href="https://wa.link/3y5mq3"
           class="icon  border-2 border-white p-4 rounded-full whatsapp"
         >
           <svg
@@ -171,7 +171,7 @@ export default function Home() {
         </a>
 
         <a
-          href="#"
+          href="https://www.tiktok.com/@cheeky.montegrande"
           class="icon  border-2 border-white p-4 rounded-full tiktok "
         >
           <svg
