@@ -231,7 +231,7 @@ const Page = () => {
             <option value="niña">Niña</option>
             <option value="bebé">Bebé</option>
             <option value="accesorio">Accesorio</option>
-            <option value="no estacional">No estacional</option>
+            <option value="no estacional">Liquidación</option>
           </select>
           {genero != "accesorio" && (
             <>
