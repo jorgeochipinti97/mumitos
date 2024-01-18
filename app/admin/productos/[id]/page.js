@@ -87,6 +87,8 @@ const Page = ({ params }) => {
     "10",
     "12",
     "14",
+    "NB",
+    "U",
     "XS",
     "S",
     "M",
@@ -151,8 +153,6 @@ const Page = ({ params }) => {
     setDescripcion(e.target.value);
   };
 
-
-
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -175,19 +175,25 @@ const Page = ({ params }) => {
         descuento: descuento ? parseFloat(descuento) : null,
       };
 
-      const response = await axios.put(`/api/productos/${params.id}`, productoData);
-response.data.success && alert('producto modificado')
+      const response = await axios.put(
+        `/api/productos/${params.id}`,
+        productoData
+      );
+      response.data.success && alert("producto modificado");
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   return (
     <div className="flex">
       <Sidebar />
       {producto && (
         <div className="flex justify-center w-screen">
-          <form className="pt-10 flex flex-col w-9/12 md:w-6/12" onSubmit={handleSubmit}>
+          <form
+            className="pt-10 flex flex-col w-9/12 md:w-6/12"
+            onSubmit={handleSubmit}
+          >
             <div className="flex justify-center my-2">
               <FileUploader
                 handleChange={handleFileChange}
@@ -285,16 +291,16 @@ response.data.success && alert('producto modificado')
               onChange={handlePrecioChange}
               placeholder="Precio"
             />
-        <input
-            className="my-2 py-2 rounded-xl px-2"
-            type="number"
-            id="descuento"
-            value={descuento}
-            onChange={handleDescuentoChange}
-            placeholder="Porcentaje de descuento"
-            min="0"
-            max="100"
-          />
+            <input
+              className="my-2 py-2 rounded-xl px-2"
+              type="number"
+              id="descuento"
+              value={descuento}
+              onChange={handleDescuentoChange}
+              placeholder="Porcentaje de descuento"
+              min="0"
+              max="100"
+            />
             <div className="flex justify-center my-5">
               <button className="btn" type="submit">
                 Enviar
