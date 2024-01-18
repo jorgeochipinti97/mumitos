@@ -39,7 +39,7 @@ const productoSchema = new mongoose.Schema({
     required: true
   },
   imagesarray: [String] // Array de URLs de imágenes
-});
+},{ timestamps: true });
 
 const Producto = mongoose.models.Producto || mongoose.model('Producto', productoSchema);
 
