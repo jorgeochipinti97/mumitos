@@ -46,7 +46,7 @@ export const CardProduct = ({ name, id, price, img, descuento }) => {
         >
           Ver más
         </button>
-        <a href={createWhatsAppLink(name, price)} target="_blank">
+        <a href={createWhatsAppLink(name, precioConDescuento)} target="_blank">
           <button className="button2 font-semibold mt-2 font-geist text-xs px-1 py-2">
             Comprar ya
           </button>

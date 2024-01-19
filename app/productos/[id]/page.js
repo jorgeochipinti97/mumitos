@@ -223,7 +223,7 @@ const Page = ({ params }) => {
                 <a
                   href={createWhatsAppLink(
                     producto.nombreproducto,
-                    producto.precio
+                    precioConDescuento
                   )}
                   target="_blank"
                 >
