@@ -20,7 +20,7 @@ const Page = () => {
   };
 
   const createWhatsAppLink = (message) => {
-    const whatsappNumber = "1142841212"; // Tu número de WhatsApp
+    const whatsappNumber = "541142841212"; // Tu número de WhatsApp
     const encodedMessage = encodeURIComponent(message);
     return `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
   };
