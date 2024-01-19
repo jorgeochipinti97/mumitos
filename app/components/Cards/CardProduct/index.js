@@ -1,9 +1,10 @@
 "use client";
 import { CartContext } from "@/context/cart/CartContext";
 import { formatPriceToUSD } from "@/utils/format";
+import gsap, { Power1 } from "gsap";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 export const CardProduct = ({ name, id, price, img, descuento }) => {
   const { push } = useRouter();
@@ -22,8 +23,16 @@ export const CardProduct = ({ name, id, price, img, descuento }) => {
     return whatsappUrl;
   };
 
+  useEffect(() => {
+    gsap.to(".cardProduct", {
+      opacity: 1,
+      ease: Power1.easeIn,
+delay:1
+    });
+  }, []);
+
   return (
-    <div className=" rounded-xl  mx-5 w-full cursor-pointer">
+    <div className=" rounded-xl  mx-5 w-full cursor-pointer cardProduct" style={{opacity:0}}>
       <Link href={`/productos/${id}`}>
         <div>
           <img src={img} className="rounded-3xl " />
