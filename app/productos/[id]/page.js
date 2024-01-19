@@ -13,6 +13,7 @@ const Page = ({ params }) => {
   const [producto, setProducto] = useState();
   const [products, setProducts] = useState();
   const [quantity_, setQuantity_] = useState(1);
+  const [precioConDescuento, setPrecioConDescuento] = useState(1);
   const { addProductToCart } = useContext(CartContext);
   const { push } = useRouter();
   const [size, setSize] = useState("");
@@ -26,12 +27,22 @@ const Page = ({ params }) => {
       setTempCartProduct({
         _id: producto._id,
         image: producto.imagesarray[0],
-        precio: producto.precio,
+        precio: producto.descuento
+          ? producto.precio - (producto.precio * producto.descuento) / 100
+          : producto.precio,
         slug: producto.slug,
         titulo: producto.nombreproducto,
         quantity: 1,
         size: size,
+        descuento: producto.descuento,
       });
+
+    producto &&
+      setPrecioConDescuento(
+        producto.descuento
+          ? producto.precio - (producto.precio * producto.descuento) / 100
+          : producto.precio
+      );
   }, [producto]);
 
   const addOrRemove = (value) => {
@@ -73,11 +84,14 @@ const Page = ({ params }) => {
     addProductToCart({
       _id: producto._id,
       image: producto.imagesarray[0],
-      precio: producto.precio,
+      precio: producto.descuento
+      ? producto.precio - (producto.precio * producto.descuento) / 100
+      : producto.precio,
       slug: producto.slug,
       titulo: producto.nombreproducto,
       quantity: quantity_,
       size: size,
+      descuento: producto.descuento,
     });
     push("/cart");
   };
@@ -109,14 +123,32 @@ const Page = ({ params }) => {
               <p className="text-center text-2xl md:text-5xl font-bold capitalize mx-2 mt-10 md:mt-5">
                 {producto.nombreproducto}
               </p>
-              <p className="mt-10 text-center text-4xl font-light">
-                {formatPriceToUSD(producto.precio)}
-              </p>
-              <div className="w-full flex justify-center">
+              {producto.descuento ? (
+                <div className="flex items-center justify-center w-full mt-5 flex-col ">
+                  <div className="flex items-center">
+                    <p className="line-through opacity-50 mr-5 ">
+                      {formatPriceToUSD(producto.precio)}
+                    </p>
+                    <p className=" text-center text-xl  ">
+                      {formatPriceToUSD(precioConDescuento)}
+                    </p>
+                  </div>
+                  <div className="w-full flex justify-center">
+                    <span className="ml-2 font-bold mt-5  mx-5 text-md text-green-600 border-2 border-green-600 rounded-full px-1 py-1 ">
+                      {producto.descuento}% OFF
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <p className="mt-10 text-center text-4xl font-light">
+                  {formatPriceToUSD(producto.precio)}
+                </p>
+              )}
 
-              <p className="mt-10 text-justify   capitalize w-9/12 text-xs  font-light">
-                {producto.descripcion}
-              </p>
+              <div className="w-full flex justify-center">
+                <p className="mt-10 text-justify   capitalize w-9/12 text-xs  font-light">
+                  {producto.descripcion}
+                </p>
               </div>
               <div>
                 {producto.selectedsizes.map((e) => (
@@ -203,33 +235,31 @@ const Page = ({ params }) => {
             </div>
           </div>
 
-
-            <div className="my-20">
-              <Marquee >
-                {products.map((e) => (
-                  <div
-                    key={e.nombreproducto}
-                    className="flex flex-col items-center justify-center "
-                  >
-                    <a href={e.slug}>
-                      <div className="w-6/12 mx-5 ">
-                        <img
-                          src={e.imagesarray[0]}
-                          alt=""
-                          className="max-w-[200px]"
-                        />
-                      </div>
-                      <div className="flex w-full justify-center  mt-5">
-                        <p className="text-center uppercase  w-[200px]">
-                          {e.nombreproducto}
-                        </p>
-                      </div>
-                    </a>
-                  </div>
-                ))}
-              </Marquee>
-            </div>
-
+          <div className="my-20">
+            <Marquee>
+              {products.map((e) => (
+                <div
+                  key={e.nombreproducto}
+                  className="flex flex-col items-center justify-center "
+                >
+                  <a href={e.slug}>
+                    <div className="w-6/12 mx-5 ">
+                      <img
+                        src={e.imagesarray[0]}
+                        alt=""
+                        className="max-w-[200px]"
+                      />
+                    </div>
+                    <div className="flex w-full justify-center  mt-5">
+                      <p className="text-center uppercase  w-[200px]">
+                        {e.nombreproducto}
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              ))}
+            </Marquee>
+          </div>
         </>
       )}
     </div>
