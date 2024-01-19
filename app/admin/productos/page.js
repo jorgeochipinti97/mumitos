@@ -131,11 +131,11 @@ const Page = () => {
               </tbody>
             </table>
           </div>
-          <div>
+          <div className="flex justify-center w-full ">
             {Array.from({ length: pageCount }, (_, i) => i + 1).map((page) => (
               <button
                 key={page}
-                className="bg-black mx-2 px-2 mt-10 rounded-full text-2xl text-white"
+                className="bg-black  mx-1 px-2 mt-10 rounded-full text-md my-6 text-white"
                 onClick={() => changePage(page)}
                 disabled={page === currentPage}
               >
