@@ -234,7 +234,7 @@ const Page = () => {
             {Array.from({ length: pageCount }, (_, i) => i + 1).map((page) => (
               <button
                 key={page}
-                className="bg-black  mx-1 px-2 mt-10 rounded-full text-md my-6 text-white"
+                className={currentPage == page? 'bg-white border-2 border-black  mx-1 px-2 mt-10 rounded-full text-md my-6 text-black': "bg-black  mx-1 px-2 mt-10 rounded-full text-md my-6 text-white"}
                 onClick={() => changePage(page)}
                 disabled={page === currentPage}
               >
