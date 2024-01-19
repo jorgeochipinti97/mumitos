@@ -28,12 +28,13 @@ export const CardProduct = ({ name, id, price, img, descuento }) => {
         </div>
       </Link>
       <p className="font-semibold text-xl mt-2 ml-2 font-mono">{name}</p>
-      <div className="font-light text-md ml-2 font-geist">
+      <div className="font-light text-md ml-2 font-geist my-2 ">
         {descuento ? (
-          <>
-            <span className="line-through">{formatPriceToUSD(price)}</span>
+          <div className="flex items-center justify-start">
+            <span className="line-through opacity-50">{formatPriceToUSD(price)}</span>
             <span className="ml-2">{formatPriceToUSD(precioConDescuento)}</span>
-          </>
+            <span className="ml-2 font-bold text-xs text-green-600 border-2 border-green-600 rounded-full px-1 py-1 ">{descuento}% OFF</span>
+          </div>
         ) : (
           <span>{formatPriceToUSD(price)}</span>
         )}
