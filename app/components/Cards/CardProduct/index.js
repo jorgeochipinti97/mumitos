@@ -7,7 +7,9 @@ import React, { useContext, useState } from "react";
 
 export const CardProduct = ({ name, id, price, img, descuento }) => {
   const { push } = useRouter();
-  const precioConDescuento = descuento ? price - (price * descuento / 100) : price;
+  const precioConDescuento = descuento
+    ? price - (price * descuento) / 100
+    : price;
 
   const createWhatsAppLink = (name, price) => {
     const message = `Hola, estoy interesado en comprar el producto: ${name} a ${formatPriceToUSD(
@@ -25,20 +27,27 @@ export const CardProduct = ({ name, id, price, img, descuento }) => {
       <Link href={`/productos/${id}`}>
         <div>
           <img src={img} className="rounded-3xl " />
+          <p className="ml-2 relative capitalize bottom-8 bg-white/80 w-fit font-bold text-xs text-green-600 border-2 border-green-600 rounded-xl px-1 py-1 ">
+            {descuento}% OFF
+          </p>
+        </div>
+
+        <p className="font-semibold text-md  ml-2 font-mono">{name}</p>
+        <div className="font-light text-md ml-2 font-geist my-2 ">
+          {descuento ? (
+            <div className="flex items-center justify-start">
+              <span className="line-through opacity-50">
+                {formatPriceToUSD(price)}
+              </span>
+              <span className="ml-2">
+                {formatPriceToUSD(precioConDescuento)}
+              </span>
+            </div>
+          ) : (
+            <span>{formatPriceToUSD(price)}</span>
+          )}
         </div>
       </Link>
-      <p className="font-semibold text-xl mt-2 ml-2 font-mono">{name}</p>
-      <div className="font-light text-md ml-2 font-geist my-2 ">
-        {descuento ? (
-          <div className="flex items-center justify-start">
-            <span className="line-through opacity-50">{formatPriceToUSD(price)}</span>
-            <span className="ml-2">{formatPriceToUSD(precioConDescuento)}</span>
-            <span className="ml-2 font-bold text-xs text-green-600 border-2 border-green-600 rounded-full px-1 py-1 ">{descuento}% OFF</span>
-          </div>
-        ) : (
-          <span>{formatPriceToUSD(price)}</span>
-        )}
-      </div>
       <div className="flex justify-around">
         <button
           className="button2 font-semibold mt-2 font-geist text-xs px-1 py-2"

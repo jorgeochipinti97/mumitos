@@ -103,7 +103,7 @@ export const ProductsFilterComponent = ({ productos, pageQuery }) => {
             </div>
           </div>
           <div className="w-screen flex justify-center">
-            <div className="w-screen md:w-9/12   grid grid-cols-1 md:grid-cols-3">
+            <div className="w-screen md:w-9/12   grid grid-cols-2 md:grid-cols-3">
               {products.map((e) => (
                 <div key={e.nombreproducto} className="w-full  flex justify-center mt-10  ">
                   <CardProduct
