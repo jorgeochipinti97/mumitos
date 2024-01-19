@@ -14,7 +14,7 @@ export const CardProduct = ({ name, id, price, img, descuento }) => {
       price
     )}`;
     // Asegúrate de reemplazar [tu_numero] con tu número de teléfono real
-    const whatsappUrl = `https://wa.me/1142841212?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/541142841212?text=${encodeURIComponent(
       message
     )}`;
     return whatsappUrl;
