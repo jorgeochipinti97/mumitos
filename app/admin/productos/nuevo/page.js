@@ -31,7 +31,6 @@ const Page = () => {
     "Remeras y blusas",
     "Remeras y bodies",
     "Ropa interior",
-    "Trajes de bano",
     "Trajes de baño",
     "Vestidos y polleras",
   ];
