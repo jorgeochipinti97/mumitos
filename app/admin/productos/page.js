@@ -153,7 +153,7 @@ const Page = () => {
                  : currentItems.map((producto, index) => (
                   <tr key={index}>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      {producto.nombreproducto}
+                      {producto.nombreproducto.slice(0,50)}...
                     </td>
 
                     <td className=" px-6 py-4 whitespace-nowrap">
