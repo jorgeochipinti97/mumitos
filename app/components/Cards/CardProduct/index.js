@@ -23,16 +23,16 @@ export const CardProduct = ({ name, id, price, img, descuento }) => {
     return whatsappUrl;
   };
 
-//   useEffect(() => {
-//     gsap.to(".cardProduct", {
-//       opacity: 1,
-//       ease: Power1.easeIn,
-// delay:1
-//     });
-//   }, []);
+  useEffect(() => {
+    gsap.to(".cardProduct", {
+      opacity: 1,
+      ease: Power1.easeIn,
+delay:1
+    });
+  }, []);
 
   return (
-    <div className=" rounded-xl  mx-5 w-full cursor-pointer cardProduct" style={{opacity:1}}>
+    <div className=" rounded-xl  mx-5 w-full cursor-pointer cardProduct" style={{opacity:0}}>
       <Link href={`/productos/${id}`}>
         <div>
           <img src={img} className="rounded-3xl " />
