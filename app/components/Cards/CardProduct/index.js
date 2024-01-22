@@ -32,7 +32,7 @@ delay:1
   }, []);
 
   return (
-    <div className=" rounded-xl  mx-5 w-full cursor-pointer cardProduct" style={{opacity:0}}>
+    <div className=" rounded-xl  mx-5 my-3 w-full cursor-pointer cardProduct" style={{opacity:0}}>
       <Link href={`/productos/${id}`}>
         <div>
           <img src={img} className="rounded-3xl " />

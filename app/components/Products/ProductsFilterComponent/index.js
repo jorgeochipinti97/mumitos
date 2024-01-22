@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { CardProduct } from "../../Cards/CardProduct";
+import gsap, { Power1 } from "gsap";
 
 export const ProductsFilterComponent = ({ productos, pageQuery }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -32,6 +33,16 @@ export const ProductsFilterComponent = ({ productos, pageQuery }) => {
     }
   }, [selectedCategory, productos]);
 
+
+
+  useEffect(() => {
+    gsap.to(".categorias", {
+      opacity: 1,
+      ease: Power1.easeIn,
+delay:1
+    });
+  }, []);
+
   return (
     <>
       <div className="pb-10">
@@ -39,7 +50,9 @@ export const ProductsFilterComponent = ({ productos, pageQuery }) => {
           className="flex w-screen justify-center"
           style={{ display: pageQuery == "accesorio" ? "none" : "auto" }}
         >
-          <div className="flex flex-wrap justify-center w-11/12   md:w-6/12">
+          <div className="flex flex-wrap justify-center w-11/12 categorias   md:w-6/12" style={
+            {opacity:0}
+          }>
             {productos && productos.length > 0 && (
               <div
                 className="my-2"
@@ -100,7 +113,7 @@ export const ProductsFilterComponent = ({ productos, pageQuery }) => {
           </div>
         </div>
         {filteredProducts.length === 0 && (
-          <div className="flex flex-col items-center justify-center w-full">
+          <div className="flex flex-col items-center justify-center w-full categorias" style={{opacity:0}}>
             <p className="text-xl text-center">No hay productos para mostrar</p>
             {/* SVG e iconos aquí */}
             <button
