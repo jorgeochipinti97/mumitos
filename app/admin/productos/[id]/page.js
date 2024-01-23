@@ -302,7 +302,7 @@ const Page = ({ params }) => {
               max="100"
             />
             <div className="flex justify-center my-5">
-              <button className="btn" type="submit">
+              <button className="border-2 btn" type="submit">
                 Enviar
               </button>
             </div>
