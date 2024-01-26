@@ -14,7 +14,7 @@ const underlineTabs = [
 ];
 
 export const MenuComponent = () => {
-  const [selectedIndex, setSelectedIndex] = useState(1);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const tabsComponents = underlineTabs.map((text, i) => {
     return (
