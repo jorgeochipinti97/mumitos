@@ -6,6 +6,7 @@ import { MagicTabSelect } from "react-magic-motion";
 
 const underlineTabs = [
   "Inicio",
+  "Colegiales",
   "Bebes",
   "Niño",
   "Niña",
@@ -30,7 +31,7 @@ export const MenuComponent = () => {
           cursor: "pointer",
         }}
       >
-        <Link href={text == 'Inicio' && '/' || text =='Bebes' &&  "/bebes" || text == 'Niño' && '/nino' || text == 'Niña' && "/nina" || text == "Accesorios" && "/accesorios" || text == "Liquidación" && "/noestacional"}>
+        <Link href={text == 'Inicio' && '/' || text =='Bebes' &&  "/bebes" || text == 'Niño' && '/nino' || text == 'Niña' && "/nina" || text == "Accesorios" && "/accesorios" || text == "Colegiales" && "/colegiales" || text == "Liquidación" && "/noestacional"}>
           {text}
 
           {selectedIndex === i && (

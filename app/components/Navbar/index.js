@@ -16,8 +16,8 @@ export const Navbar = () => {
         class="bottom-0 w-full fixed z-50 h-fit py-2 md:hidden bg-black text-white text-xs rounded-t-lg"
         style={{ display: pathname.includes("admin") ? "none" : "auto" }}
       >
-        <ul className="flex">
-          <li class="">
+        <ul className="flex flex-wrap justify-center">
+          <li className="border m-1 rounded-md">
             <a
               href="/colegiales"
               class="flex items-center justify-center w-full px-4 py-3 "
@@ -25,7 +25,7 @@ export const Navbar = () => {
               <span>Colegiales</span>
             </a>
           </li>
-          <li class="">
+          <li className="border m-1 rounded-md">
             <a
               href="/nino"
               class="flex items-center justify-center w-full px-4 py-3 "
@@ -33,7 +33,7 @@ export const Navbar = () => {
               <span>Niño</span>
             </a>
           </li>
-          <li class="">
+          <li className="border m-1 rounded-md">
             <a
               href="/nina"
               class="flex items-center justify-center w-full px-4 py-3 "
@@ -41,7 +41,7 @@ export const Navbar = () => {
               <span>Niña</span>
             </a>
           </li>
-          <li class="">
+          <li className="border m-1 rounded-md">
             <a
               href="/bebes"
               class="flex items-center justify-center w-full px-4 py-3 "
@@ -49,7 +49,7 @@ export const Navbar = () => {
               <span>Bebés</span>
             </a>
           </li>
-          <li class="">
+          <li className="border m-1 rounded-md">
             <a
               href="/accesorios"
               class="flex items-center justify-center w-full px-4 py-3 "
@@ -57,7 +57,7 @@ export const Navbar = () => {
               <span>Accesorios</span>
             </a>
           </li>
-          <li class="">
+          <li className="border m-1 rounded-md">
             <a
               href="/noestacional"
               class="flex items-center justify-center w-full px-4 py-3 "
