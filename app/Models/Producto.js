@@ -13,7 +13,7 @@ const productoSchema = new mongoose.Schema(
     genero: {
       type: String,
       required: true,
-      enum: ["niño", "niña", "bebé", "accesorio", "no estacional"],
+
     },
     slug: {
       type: String,
@@ -22,23 +22,7 @@ const productoSchema = new mongoose.Schema(
     categoria: {
       type: String,
       required: true,
-      enum: [
-        "bodies y enteritos",
-        "buzos y sweaters",
-        "calzado",
-        "camperas",
-        "camperas y chalecos",
-        "pantalones",
-        "pantalones y enteritos",
-        "pantalones y leggins",
-        "pijamas",
-        "remeras blusas y bodies",
-        "remeras y blusas",
-        "remeras y bodies",
-        "ropa interior",
-        "trajes de baño",
-        "vestidos y polleras",
-      ],
+
     },
     precio: {
       type: Number,

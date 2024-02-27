@@ -19,6 +19,14 @@ export const Navbar = () => {
         <ul className="flex">
           <li class="">
             <a
+              href="/colegiales"
+              class="flex items-center justify-center w-full px-4 py-3 "
+            >
+              <span>Colegiales</span>
+            </a>
+          </li>
+          <li class="">
+            <a
               href="/nino"
               class="flex items-center justify-center w-full px-4 py-3 "
             >
