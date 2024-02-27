@@ -230,6 +230,7 @@ const Page = ({ params }) => {
               value={nombreproducto}
               onChange={handlenombreproductoChange}
               placeholder="Nombre del producto"
+              required
             />
 
             <textarea
@@ -238,6 +239,7 @@ const Page = ({ params }) => {
               value={descripcion}
               onChange={handleDescripcionChange}
               placeholder="Descripción del producto"
+              required
             ></textarea>
 
             <select
@@ -245,6 +247,7 @@ const Page = ({ params }) => {
               value={genero}
               onChange={handleGeneroChange}
               className="my-2 py-2 rounded-xl px-2"
+              required
             >
               <option value="">Selecciona un género</option>
               <option value="niño">Niño</option>
@@ -296,6 +299,7 @@ const Page = ({ params }) => {
               value={precio}
               onChange={handlePrecioChange}
               placeholder="Precio"
+              required
             />
             <input
               className="my-2 py-2 rounded-xl px-2"
