@@ -27,23 +27,28 @@ export const CardProduct = ({ name, id, price, img, descuento }) => {
     gsap.to(".cardProduct", {
       opacity: 1,
       ease: Power1.easeIn,
-delay:1
+      delay: 1,
     });
   }, []);
 
   return (
-    <div className=" rounded-xl  mx-5 my-3 w-full cursor-pointer cardProduct" style={{opacity:0}}>
+    <div
+      className=" rounded-xl  mx-5 my-3 w-full cursor-pointer cardProduct"
+      style={{ opacity: 0 }}
+    >
       <Link href={`/productos/${id}`}>
         <div>
           <img src={img} className="rounded-3xl " />
-          <p className="ml-2 relative capitalize bottom-8 bg-white/80 w-fit font-bold text-xs text-green-600 border-2 border-green-600 rounded-xl px-1 py-1 ">
-            {descuento}% OFF
-          </p>
+          {descuento && descuento > 0 && (
+            <p className="ml-2 relative capitalize bottom-8 bg-white/80 w-fit font-bold text-xs text-green-600 border-2 border-green-600 rounded-xl px-1 py-1 ">
+              {descuento}% OFF
+            </p>
+          )}
         </div>
 
         <p className="font-semibold text-md  ml-2 font-mono">{name}</p>
         <div className="font-light text-md ml-2 font-geist my-2 ">
-          {descuento ? (
+          {descuento && descuento > 0 ? (
             <div className="flex items-center justify-start">
               <span className="line-through opacity-50">
                 {formatPriceToUSD(price)}

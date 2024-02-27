@@ -33,6 +33,12 @@ const Page = () => {
     "Ropa interior",
     "Trajes de baño",
     "Vestidos y polleras",
+    "Medias",
+    "Jogging",
+    "Remera",
+    "Polera ",
+    "Campera",
+    "Buzo",
   ];
   const sizes = [
     "1",

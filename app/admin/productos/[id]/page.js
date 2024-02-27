@@ -53,9 +53,14 @@ const Page = ({ params }) => {
     "Remeras y blusas",
     "Remeras y bodies",
     "Ropa interior",
-
     "Trajes de baño",
     "Vestidos y polleras",
+    "Medias",
+    "Jogging",
+    "Remera",
+    "Polera ",
+    "Campera",
+    "Buzo",
   ];
   const sizes = [
     "1",
