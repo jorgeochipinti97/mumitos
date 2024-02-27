@@ -247,6 +247,7 @@ const Page = ({ params }) => {
               <option value="bebé">Bebé</option>
               <option value="accesorio">Accesorio</option>
               <option value="no estacional">Liquidación</option>
+              <option value="colegiales">Colegiales</option>
             </select>
 
             <select
