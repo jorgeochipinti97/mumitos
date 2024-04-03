@@ -163,7 +163,7 @@ const Page = () => {
 
   const crearProducto = async () => {
     try {
-      const productoData = {
+      const productoData = { 
         nombreproducto: nombreproducto.toLowerCase(),
         descripcion: descripcion.toLowerCase(),
         genero: genero.toLowerCase(),
