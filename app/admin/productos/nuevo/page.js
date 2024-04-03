@@ -97,18 +97,14 @@ const Page = () => {
   const handleFileChange = async (file) => {
     try {
       const formData = new FormData();
-      formData.append("file", file);
-      formData.append("upload_preset", "ml_default");
 
-      const response = await fetch(
-        `https://api.cloudinary.com/v1_1/duptnofi0/image/upload`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
-      const data = await response.json();
-      setimagesarray(imagesarray.concat(data.secure_url));
+      formData.append("file", file);
+
+      const response = await axios.post("/api/s3", formData);
+
+      const fileUrl = response.data.fileUrl;
+
+      setimagesarray(imagesarray.concat(fileUrl));
     } catch (er) {
       console.log(er);
     }
