@@ -45,7 +45,7 @@ export default async function handler(req, res) {
         // Subida del archivo a S3
         await uploadFileToS3(uint8Array, fileName);
 
-        const fileUrl = `https://yasoundtestbucket.s3.sa-east-1.amazonaws.com/${fileName}`;
+        const fileUrl = `https://mumitos.s3.sa-east-1.amazonaws.com/${fileName}`;
 
         return new Response(JSON.stringify({ success: true, fileUrl }), {
           status: 200,
@@ -105,7 +105,7 @@ export default async function handler(req, res) {
 
 async function deleteFileFromS3(fileName) {
   const command = new DeleteObjectCommand({
-    Bucket: "yasoundtestbucket",
+    Bucket: "mumitos",
     Key: fileName,
   });
 
@@ -119,7 +119,7 @@ async function deleteFileFromS3(fileName) {
 
 async function uploadFileToS3(fileBuffer, fileName) {
   const params = {
-    Bucket: "yasoundtestbucket",
+    Bucket: "mumitos",
     Key: fileName,
     Body: fileBuffer,
     ContentType: "application/octet-stream", // Ajusta según el tipo de archivo real
