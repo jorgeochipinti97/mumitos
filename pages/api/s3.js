@@ -70,9 +70,8 @@ export default async function handler(req, res) {
           });
         }
         console.log(fileName);
-        // Llamada a la función para eliminar el archivo de S3.
         await deleteFileFromS3(fileName);
-        // Respuesta exitosa.
+
         return new Response(
           JSON.stringify({ message: "Imagen eliminada exitosamente." }),
           {
@@ -104,6 +103,7 @@ export default async function handler(req, res) {
 }
 
 async function deleteFileFromS3(fileName) {
+  console.log(fileName)
   const command = new DeleteObjectCommand({
     Bucket: "mumitos",
     Key: fileName,

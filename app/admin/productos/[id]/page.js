@@ -102,10 +102,30 @@ const Page = ({ params }) => {
   ];
 
   const fileTypes = ["JPG", "PNG", "GIF", "JPEG", "AVIF", "WEBP"];
-  const handleRemoveImage = (index) => {
+
+  const extractFileNameFromURL = (url) => {
+    // Usamos el constructor URL para parsear la URL
+    const parsedURL = new URL(url);
+    // Extraemos el pathname y luego obtenemos el último segmento, que es el nombre del archivo
+    const pathname = parsedURL.pathname;
+    const fileName = pathname.split("/").pop();
+    return fileName;
+  };
+
+  const handleRemoveImage = async (index) => {
+    const imageUrl = imagesarray[index];
+    
+    const isS3Url = imageUrl.includes("s3.sa-east-1.amazonaws.com");
+    if (isS3Url) {
+      const fileName = extractFileNameFromURL(imageUrl);
+      const data = await axios.put("/api/s3", { fileName });
+      console.log(data);
+    }
+
     const newimagesarray = imagesarray.filter((_, i) => i !== index);
     setimagesarray(newimagesarray);
   };
+
   const handleScroll = (e) => {
     e.preventDefault(); // Esto previene el cambio del valor del input con el scroll
   };
