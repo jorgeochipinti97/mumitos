@@ -69,7 +69,6 @@ export default async function handler(req, res) {
             headers: { "Content-Type": "application/json" },
           });
         }
-        console.log(fileName);
         await deleteFileFromS3(fileName);
 
         return new Response(
@@ -103,19 +102,21 @@ export default async function handler(req, res) {
 }
 
 async function deleteFileFromS3(fileName) {
-  console.log(fileName)
   const command = new DeleteObjectCommand({
     Bucket: "mumitos",
     Key: fileName,
   });
 
   try {
-    const response = await s3Client.send(command);
-    console.log(response);
+    await s3Client.send(command);
+    console.log("Archivo eliminado exitosamente");
+    return true; // Indicar éxito
   } catch (err) {
-    console.log(err);
+    console.error("Error al eliminar el archivo:", err);
+    throw err; // Propagar el error
   }
 }
+
 
 async function uploadFileToS3(fileBuffer, fileName) {
   const params = {

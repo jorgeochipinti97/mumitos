@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.540.0",
+    "@vercel/analytics": "^1.2.2",
     "axios": "^1.6.5",
     "clsx": "^2.1.0",
     "framer-motion": "^10.17.12",

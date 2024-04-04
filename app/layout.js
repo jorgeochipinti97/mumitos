@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { Analytics } from "@vercel/analytics/react"
 
 import { Navbar } from "./components/Navbar";
 import { Providers } from "./providers";
@@ -26,8 +27,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className} >
         <Providers>
           <Navbar />
-
           {children}
+          <Analytics />
         </Providers>
       </body>
     </html>
