@@ -18,11 +18,14 @@ const Page = () => {
   const [descripcion, setDescripcion] = useState("");
   const { push } = useRouter();
   const categorias = [
-    "Bodies y enteritos",
+    "Bodies",
+    "shorts",
+    "Enteritos",
     "Buzos y sweaters",
     "Calzado",
     "Camperas",
     "Camperas y chalecos",
+    "Camisa yremeras",
     "Pantalones",
     "Pantalones y enteritos",
     "Pantalones y leggins",
@@ -32,7 +35,7 @@ const Page = () => {
     "Remeras y bodies",
     "Ropa interior",
     "Trajes de baño",
-    "Vestidos y polleras",
+    "Vestidos",
     "Medias",
     "Jogging",
     "Remera",
@@ -40,6 +43,7 @@ const Page = () => {
     "Campera",
     "Buzo",
   ];
+  
   const sizes = [
     "1",
     "2",

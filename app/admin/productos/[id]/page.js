@@ -40,11 +40,14 @@ const Page = ({ params }) => {
   }, [producto]);
 
   const categorias = [
-    "Bodies y enteritos",
+    "Bodies",
+    "shorts",
+    "Enteritos",
     "Buzos y sweaters",
     "Calzado",
     "Camperas",
     "Camperas y chalecos",
+    "Camisa yremeras",
     "Pantalones",
     "Pantalones y enteritos",
     "Pantalones y leggins",
@@ -54,7 +57,7 @@ const Page = ({ params }) => {
     "Remeras y bodies",
     "Ropa interior",
     "Trajes de baño",
-    "Vestidos y polleras",
+    "Vestidos",
     "Medias",
     "Jogging",
     "Remera",

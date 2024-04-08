@@ -13,7 +13,7 @@ export const metadata = {
   description:
     "Descubre en Mumitos la mejor selección de ropa infantil. Estilos únicos y cómodos para niños y niñas. Calidad y moda sostenible para tus pequeños.",
 };
-
+ 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
